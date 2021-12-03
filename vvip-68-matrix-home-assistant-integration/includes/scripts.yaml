@@ -1,7 +1,7 @@
-###################################   МАТРИЦЯ   #################################
+###################################   МАТРИЦА   #################################
 
   matrix_test_running_text:
-    alias: "Перегляд"
+    alias: "Просмотр"
     icon: "mdi:motion-play-outline"
     sequence:
       - service: mqtt.publish
@@ -11,7 +11,7 @@
             $13 1 {{ states('input_text.matrix_running_text_string_name') }};
 
   matrix_set_time:
-    alias: "Встановити час"
+    alias: "Установить время"
     icon: "mdi:web-clock"
     sequence:
       - service: mqtt.publish

@@ -1,6 +1,5 @@
-###################################   ПАРАМЕТРИ БІЖУЧОЇ СТРОКИ   #################################
+###################################   ПАРАМЕТРЫ БЕГУЩЕЙ СТРОКИ   #################################
   - alias: get_matrix_TE
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/TE
@@ -21,7 +20,6 @@
           entity_id: automation.set_matrix_TE
 
   - alias: get_matrix_TI
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/TI
@@ -38,7 +36,6 @@
           entity_id: automation.set_matrix_TI
 
   - alias: get_matrix_CT
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/CT
@@ -51,18 +48,17 @@
           entity_id: input_select.matrix_running_text_color
           option: >
             {% if trigger.payload | int == 1 %}
-            Веселка
+            Радуга
             {% elif trigger.payload | int == 2 %}
-            Кожна буква своїм кольором
+            Каждая буква своим цветом
             {% else %}
-            Однотонний
+            Однотонный
             {% endif %}
       - service: automation.turn_on
         data:
           entity_id: automation.set_matrix_CT
 
   - alias: get_matrix_C2
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/C2
@@ -87,7 +83,6 @@
           entity_id: automation.set_matrix_C2
 
   - alias: get_matrix_ST
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/ST
@@ -105,7 +100,6 @@
 
 # Запит тексту біжучої строки
   - alias: ask_running_string_text
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_select.matrix_running_text_string
@@ -214,9 +208,8 @@
         data:
           entity_id: automation.set_running_string_text
 
-# Отримання тексту біжучої строки
+# Получение текста бегущей строки
   - alias: get_running_string_text
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/dta

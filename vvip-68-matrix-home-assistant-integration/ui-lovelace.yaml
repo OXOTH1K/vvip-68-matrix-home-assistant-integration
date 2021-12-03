@@ -2,21 +2,21 @@ title: Home Assistant - сервер
 
 views:
 
-  - title: Освітлення
+  - title: Освещение
     icon: mdi:lightbulb-group
           
     cards:
       - type: button
         entity: input_boolean.matrix_switch_state
         icon: mdi:string-lights
-        name: "Гірлянда"
+        name: "Гирлянда"
 
-  - title: Гірлянда
+  - title: Гирлянда
     icon: mdi:string-lights
     
     cards:
           - type: entities
-            title: "Загальні"
+            title: "Общие"
             show_header_toggle: false
             entities:
               - entity: input_boolean.matrix_auto_mode
@@ -35,7 +35,7 @@ views:
                 icon: 'mdi:timer-outline'
               - type: custom:numberbox-card
                 entity: input_number.matrix_auto_mode_in
-                unit: " хв."
+                unit: " мин."
                 icon: 'mdi:timer-outline'
 
           - type: entities
@@ -49,13 +49,13 @@ views:
                 icon: 'mdi:map-marker'
               - type: custom:numberbox-card
                 entity: input_number.matrix_weather_update_period
-                unit: " хв."
+                unit: " мин."
                 icon: 'mdi:timer-outline'
 
           - type: vertical-stack
             cards:
               - type: entities
-                title: "Годинник"
+                title: "Часы"
                 show_header_toggle: false
                 entities:
                   - entity: script.matrix_set_time
@@ -63,7 +63,7 @@ views:
                   - entity: input_text.matrix_clock_ntp_server
                   - type: custom:numberbox-card
                     entity: input_number.matrix_clock_ntp_sync_period
-                    unit: " хв."
+                    unit: " мин."
                     icon: 'mdi:timer-outline'
                   - type: custom:numberbox-card
                     entity: input_number.matrix_clock_timezone
@@ -77,7 +77,7 @@ views:
                   - entity: input_boolean.matrix_clock_color_temperature_night
                   - entity: input_boolean.matrix_clock_date
                   - type: section
-                    label: "Показувати дату..."
+                    label: "Показывать дату..."
                   - type: custom:numberbox-card
                     entity: input_number.matrix_clock_date_duration
                     unit: " сек."
@@ -101,7 +101,7 @@ views:
           - type: vertical-stack
             cards:
               - type: entities
-                title: "Біжуча строка"
+                title: "Бегущая строка"
                 show_header_toggle: false
                 entities:
                   - entity: input_boolean.matrix_running_text_over_effects
@@ -116,10 +116,10 @@ views:
               - type: conditional
                 conditions:
                   - entity: input_select.matrix_running_text_color
-                    state: "Однотонний"
+                    state: "Однотонный"
                 card:
                   type: entities
-                  title: "Колір тексту"
+                  title: "Цвет текста"
                   show_header_toggle: false
                   entities:
                   - type: custom:numberbox-card
@@ -151,51 +151,51 @@ views:
 
 
           - type: entities
-            title: "Режими по часу"
+            title: "Режимы по времени"
             show_header_toggle: false
             entities:
               - type: section
                 label: "Режим 1"
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_1_hours
-                unit: " год."
+                unit: " ч."
                 icon: 'mdi:clock-outline'
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_1_minutes
-                unit: " хв."
+                unit: " мин."
                 icon: 'mdi:clock-outline'
               - entity: input_select.matrix_time_mode_1_action
               - type: section
                 label: "Режим 2"
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_2_hours
-                unit: " год."
+                unit: " ч."
                 icon: 'mdi:clock-outline'
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_2_minutes
-                unit: " хв."
+                unit: " мин."
                 icon: 'mdi:clock-outline'
               - entity: input_select.matrix_time_mode_2_action
               - type: section
                 label: "Режим 3"
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_3_hours
-                unit: " год."
+                unit: " ч."
                 icon: 'mdi:clock-outline'
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_3_minutes
-                unit: " хв."
+                unit: " мин."
                 icon: 'mdi:clock-outline'
               - entity: input_select.matrix_time_mode_3_action
               - type: section
                 label: "Режим 4"
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_4_hours
-                unit: " год."
+                unit: " ч."
                 icon: 'mdi:clock-outline'
               - type: custom:numberbox-card
                 entity: input_number.matrix_time_mode_4_minutes
-                unit: " хв."
+                unit: " мин."
                 icon: 'mdi:clock-outline'
               - entity: input_select.matrix_time_mode_4_action
 
@@ -211,7 +211,7 @@ views:
                         state: "on"
                     card:
                       type: entities
-                      title: "Ефекти"
+                      title: "Эффекты"
                       show_header_toggle: false
                       entities:
                         - entity: input_select.show_effects_settings
@@ -315,7 +315,7 @@ views:
                   - type: conditional
                     conditions:
                       - entity: input_select.show_effects_settings
-                        state: "Веселка"
+                        state: "Радуга"
                     card:
                       type: entities
                       entities:
@@ -324,7 +324,7 @@ views:
                   - type: conditional
                     conditions:
                       - entity: input_select.show_effects_settings
-                        state: "Стрілки"
+                        state: "Стрелки"
                     card:
                       type: entities
                       entities:
@@ -333,7 +333,7 @@ views:
                   - type: conditional
                     conditions:
                       - entity: input_select.show_effects_settings
-                        state: "Анімація"
+                        state: "Анимация"
                     card:
                       type: entities
                       entities:
@@ -342,7 +342,7 @@ views:
                   - type: conditional
                     conditions:
                       - entity: input_select.show_effects_settings
-                        state: "Узори"
+                        state: "Узоры"
                     card:
                       type: entities
                       entities:

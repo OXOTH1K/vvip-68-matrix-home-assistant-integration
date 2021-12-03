@@ -1,6 +1,5 @@
-# Установка параметрів біжучої строки
+# Установка параметров бегущей строки
   - alias: set_matrix_TE
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_running_text_over_effects
@@ -16,7 +15,6 @@
             {%- endif -%}
 
   - alias: set_matrix_TI
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_running_text_interval
@@ -28,7 +26,6 @@
             $13 9 {{ states('input_number.matrix_running_text_interval')|int }};
 
   - alias: set_matrix_ST
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_running_text_speed
@@ -40,7 +37,6 @@
             $13 13 {{ states('input_number.matrix_running_text_speed')|int }};
 
   - alias: set_matrix_C2
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_running_text_color_red
@@ -56,7 +52,6 @@
             $13 15 {{ '%0x' % states('input_number.matrix_running_text_color_red')|int }}{{ '%0x' % states('input_number.matrix_running_text_color_green')|int }}{{ '%0x' % states('input_number.matrix_running_text_color_blue')|int }};
 
   - alias: set_matrix_CT
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_select.matrix_running_text_color
@@ -65,17 +60,16 @@
         data_template:
           topic: WiFiPanel-0/cmd
           payload_template: >
-            {% if states('input_select.matrix_running_text_color') == "Веселка" %}
+            {% if states('input_select.matrix_running_text_color') == "Радуга" %}
             $13 11 1;
-            {% elif states('input_select.matrix_running_text_color') == "Кожна буква своїм кольором" %}
+            {% elif states('input_select.matrix_running_text_color') == "Каждая буква своим цветом" %}
             $13 11 2;
             {% else %}
             $13 11 0;
             {% endif %}
 
-# Установка тексту біжучої строки
+# Установка текста бегущей строки
   - alias: set_running_string_text
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_text.matrix_running_text_string_contents

@@ -1,7 +1,6 @@
-###################################   ПАРАМЕТРИ ГОДИННИКА   #################################
+###################################   ПАРАМЕТРЫ ЧАСОВ   #################################
 
   - alias: get_matrix_np
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/NP
@@ -22,7 +21,6 @@
           entity_id: automation.set_clock_parameters_1
 
   - alias: get_matrix_ns
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/NS
@@ -39,7 +37,6 @@
           entity_id: automation.set_clock_parameters_2
 
   - alias: get_matrix_nt
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/NT
@@ -56,7 +53,6 @@
           entity_id: automation.set_clock_parameters_3
 
   - alias: get_matrix_nt
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/NZ
@@ -73,7 +69,6 @@
           entity_id: automation.set_clock_parameters_3
 
   - alias: get_matrix_ck
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/CK
@@ -86,9 +81,9 @@
           entity_id: input_select.matrix_clock_size
           option: >
             {% if trigger.payload | int == 1 %}
-            Малий
+            Маленький
             {% elif trigger.payload | int == 2 %}
-            Великий
+            Большой
             {% else %}
             Авто
             {% endif %}
@@ -97,7 +92,6 @@
           entity_id: automation.set_clock_parameters_5
 
   - alias: get_matrix_dw
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/DW
@@ -118,7 +112,6 @@
           entity_id: automation.set_clock_parameters_6
 
   - alias: get_matrix_wc
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/WC
@@ -139,7 +132,6 @@
           entity_id: automation.set_clock_parameters_7
 
   - alias: get_matrix_wn
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/WN
@@ -160,7 +152,6 @@
           entity_id: automation.set_clock_parameters_8
 
   - alias: get_matrix_dc
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/DC
@@ -181,7 +172,6 @@
           entity_id: automation.set_clock_parameters_9
 
   - alias: get_matrix_dd
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/DD
@@ -198,7 +188,6 @@
           entity_id: automation.set_clock_parameters_10
 
   - alias: get_matrix_di
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/DI
@@ -215,7 +204,6 @@
           entity_id: automation.set_clock_parameters_10
 
   - alias: get_matrix_ce
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/CE
@@ -236,7 +224,6 @@
           entity_id: automation.set_clock_parameters_11
 
   - alias: get_matrix_co
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/CO
@@ -258,7 +245,6 @@
           entity_id: automation.set_clock_parameters_12
 
   - alias: get_matrix_cc
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/CC
@@ -271,18 +257,17 @@
           entity_id: input_select.matrix_clock_color
           option: >
             {% if trigger.payload | int == 1 %}
-            Кожна цифра своїм кольором
+            Каждая цифра своим цветом
             {% elif trigger.payload | int == 2 %}
-            Години, точки, хвилини
+            Часы, точки, минуты
             {% else %}
-            Однотонний
+            Однотонный
             {% endif %}
       - service: automation.turn_on
         data:
           entity_id: automation.set_clock_parameters_13
 
   - alias: get_matrix_nc
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/NC
@@ -295,26 +280,25 @@
           entity_id: input_select.matrix_clock_night_color
           option: >
             {% if trigger.payload | int == 0 %}
-            Червоний
+            Красный
             {% elif trigger.payload | int == 1 %}
-            Зелений
+            Зеленый
             {% elif trigger.payload | int == 2 %}
-            Синій
+            Синий
             {% elif trigger.payload | int == 3 %}
-            Бірюзовий
+            Бирюзовый
             {% elif trigger.payload | int == 4 %}
-            Рожевий
+            Розовый
             {% elif trigger.payload | int == 5 %}
-            Жовтий
+            Желтый
             {% else %}
-            Білий
+            Белый
             {% endif %}
       - service: automation.turn_on
         data:
           entity_id: automation.set_clock_parameters_14
 
   - alias: get_matrix_sc
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/SC

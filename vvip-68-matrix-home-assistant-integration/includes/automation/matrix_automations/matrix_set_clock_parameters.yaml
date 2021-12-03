@@ -1,6 +1,5 @@
-# Настройки годинника
+# Настройки часов
   - alias: set_clock_parameters_1
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_clock_ntp_sync
@@ -16,7 +15,6 @@
             {%- endif -%}
 
   - alias: set_clock_parameters_2
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_text.matrix_clock_ntp_server
@@ -28,7 +26,6 @@
             $6 1|{{ states('input_text.matrix_clock_ntp_server') }}
 
   - alias: set_clock_parameters_3
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_clock_ntp_sync_period
@@ -42,7 +39,6 @@
             $19 3 {{ states('input_number.matrix_clock_ntp_sync_period')|int }} {{ states('input_number.matrix_clock_timezone')|int }};
 
   - alias: set_clock_parameters_5
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_select.matrix_clock_size
@@ -51,16 +47,15 @@
         data_template:
           topic: WiFiPanel-0/cmd
           payload_template: >
-            {% if states('input_select.matrix_clock_size') == "Малий" %}
+            {% if states('input_select.matrix_clock_size') == "Маленький" %}
             $19 7 1;
-            {% elif states('input_select.matrix_clock_size') == "Великий" %}
+            {% elif states('input_select.matrix_clock_size') == "Большой" %}
             $19 7 2;
             {% else %}
             $19 7 0;
             {% endif %}
 
   - alias: set_clock_parameters_6
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_clock_temperature
@@ -76,7 +71,6 @@
             {%- endif -%}
 
   - alias: set_clock_parameters_7
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_clock_color_temperature_day
@@ -92,7 +86,6 @@
             {%- endif -%}
 
   - alias: set_clock_parameters_8
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_clock_color_temperature_night
@@ -108,7 +101,6 @@
             {% endif %}
 
   - alias: set_clock_parameters_9
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_clock_date
@@ -124,7 +116,6 @@
             {% endif %}
 
   - alias: set_clock_parameters_10
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_clock_date_duration
@@ -138,7 +129,6 @@
             $19 17 {{ states('input_number.matrix_clock_date_duration')|int }} {{ states('input_number.matrix_clock_date_interval')|int }};
 
   - alias: set_clock_parameters_11
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_clock_date_over_effects
@@ -154,7 +144,6 @@
             {% endif %}
 
   - alias: set_clock_parameters_12
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_select.matrix_clock_direction
@@ -170,7 +159,6 @@
             {% endif %}
 
   - alias: set_clock_parameters_13
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_select.matrix_clock_color
@@ -179,16 +167,15 @@
         data_template:
           topic: WiFiPanel-0/cmd
           payload_template: >
-            {% if states('input_select.matrix_clock_color') == "Кожна цифра своїм кольором" %}
+            {% if states('input_select.matrix_clock_color') == "Каждая цифра своим цветом" %}
             $19 5 1;
-            {% elif states('input_select.matrix_clock_color') == "Години, точки, хвилини" %}
+            {% elif states('input_select.matrix_clock_color') == "Часы, точки, минуты" %}
             $19 5 2;
             {% else %}
             $19 5 0;
             {% endif %}
 
   - alias: set_clock_parameters_14
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_select.matrix_clock_night_color
@@ -197,24 +184,23 @@
         data_template:
           topic: WiFiPanel-0/cmd
           payload_template: >
-            {% if states('input_select.matrix_clock_night_color') == "Червоний" %}
+            {% if states('input_select.matrix_clock_night_color') == "Красный" %}
             $19 10 0;
-            {% elif states('input_select.matrix_clock_night_color') == "Зелений" %}
+            {% elif states('input_select.matrix_clock_night_color') == "Зеленый" %}
             $19 10 1;
-            {% elif states('input_select.matrix_clock_night_color') == "Синій" %}
+            {% elif states('input_select.matrix_clock_night_color') == "Синий" %}
             $19 10 2;
-            {% elif states('input_select.matrix_clock_night_color') == "Бірюзовий" %}
+            {% elif states('input_select.matrix_clock_night_color') == "Бирюзовый" %}
             $19 10 3;
-            {% elif states('input_select.matrix_clock_night_color') == "Рожевий" %}
+            {% elif states('input_select.matrix_clock_night_color') == "Розовый" %}
             $19 10 4;
-            {% elif states('input_select.matrix_clock_night_color') == "Жовтий" %}
+            {% elif states('input_select.matrix_clock_night_color') == "Желтый" %}
             $19 10 5;
             {% else %}
             $19 10 6;
             {% endif %}
 
   - alias: set_clock_parameters_15
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_clock_speed

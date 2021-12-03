@@ -1,5 +1,4 @@
   - alias: set_matrix_mode_use_in_demo
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_mode_use_in_demo
@@ -20,7 +19,6 @@
             {%- endif -%}
 
   - alias: set_matrix_mode_text_overlay
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_mode_text_overlay
@@ -41,7 +39,6 @@
             {%- endif -%}
 
   - alias: set_matrix_mode_clock_overlay
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_mode_clock_overlay
@@ -62,7 +59,6 @@
             {% endif %}
 
   - alias: set_matrix_mode_contrast
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_mode_contrast
@@ -79,7 +75,6 @@
             $8 6 {{ states('input_number.matrix_mode_number') | int }} {{ states('input_number.matrix_mode_contrast')|int }};
 
   - alias: set_matrix_mode_speed
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_mode_speed
@@ -96,7 +91,6 @@
             $15 {{ states('input_number.matrix_mode_speed')|int }} 0;
 
   - alias: set_matrix_mode_variant
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_mode_variant
@@ -113,7 +107,6 @@
             $8 1 {{ states('input_number.matrix_mode_number') | int }} {{ states('input_number.matrix_mode_variant')|int }};
 
   - alias: set_matrix_mode_color
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_mode_color
@@ -130,7 +123,6 @@
             $15 {{ states('input_number.matrix_mode_color')|int }} 0;
 
   - alias: set_matrix_mode_saturation
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_mode_saturation
@@ -147,8 +139,7 @@
             $8 1 {{ states('input_number.matrix_mode_number') | int }} {{ states('input_number.matrix_mode_saturation')|int }};
 
 
-  - alias: Настройки режимів ефекту "Веселка"
-    initial_state: true
+  - alias: Настройки режимов эффекта "Радуга"
     trigger:
       - platform: state
         entity_id: input_select.matrix_rainbow_effect_variant
@@ -164,17 +155,16 @@
             $8 3 4 1;
             {% elif states('input_select.matrix_rainbow_effect_variant') == "Горизонтально" %}
             $8 3 4 2;
-            {% elif states('input_select.matrix_rainbow_effect_variant') == "Діагонально" %}
+            {% elif states('input_select.matrix_rainbow_effect_variant') == "Диагонально" %}
             $8 3 4 3;
-            {% elif states('input_select.matrix_rainbow_effect_variant') == "По колу" %}
+            {% elif states('input_select.matrix_rainbow_effect_variant') == "По кругу" %}
             $8 3 4 4;
             {% else %}
             $8 3 4 0;
             {% endif %}
 
 
-  - alias: Настройки режимів ефекту "Стрілки"
-    initial_state: true
+  - alias: Настройки режимов эффекта "Стрелки"
     trigger:
       - platform: state
         entity_id: input_select.matrix_arrows_effect_variant
@@ -192,16 +182,15 @@
             $8 3 38 2;
             {% elif states('input_select.matrix_arrows_effect_variant') == "4-центр" %}
             $8 3 38 3;
-            {% elif states('input_select.matrix_arrows_effect_variant') == "2-зміщення" %}
+            {% elif states('input_select.matrix_arrows_effect_variant') == "2-смещение" %}
             $8 3 38 4;
-            {% elif states('input_select.matrix_arrows_effect_variant') == "4-зміщення" %}
+            {% elif states('input_select.matrix_arrows_effect_variant') == "4-смещение" %}
             $8 3 38 5;
             {% else %}
             $8 3 38 0;
             {% endif %}
 
-  - alias: Настройки режимів ефекту "Анімація"
-    initial_state: true
+  - alias: Настройки режимов эффекта "Анимация"
     trigger:
       - platform: state
         entity_id: input_select.matrix_animation_effect_variant
@@ -213,14 +202,13 @@
         data_template:
           topic: WiFiPanel-0/cmd
           payload_template: >
-            {% if states('input_select.matrix_animation_effect_variant') == "Маріо" %}
+            {% if states('input_select.matrix_animation_effect_variant') == "Марио" %}
             $8 3 39 1;
             {% else %}
             $8 3 39 0;
             {% endif %}
 
-  - alias: Настройки ефектів режиму "Узори"
-    initial_state: true
+  - alias: Настройки эффектов "Узоры"
     trigger:
       - platform: state
         entity_id: input_select.matrix_patterns_effect_variant
@@ -234,35 +222,35 @@
           payload_template: >
             {% if states('input_select.matrix_patterns_effect_variant') == "Зигзаг" %}
             $8 3 42 1;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Ноти" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Ноты" %}
             $8 3 42 2;
             {% elif states('input_select.matrix_patterns_effect_variant') == "Ромб" %}
             $8 3 42 3;
             {% elif states('input_select.matrix_patterns_effect_variant') == "Серце" %}
             $8 3 42 4;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Ялинка" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Елка" %}
             $8 3 42 5;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Клітка" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Клетка" %}
             $8 3 42 6;
             {% elif states('input_select.matrix_patterns_effect_variant') == "Смайлик" %}
             $8 3 42 7;
             {% elif states('input_select.matrix_patterns_effect_variant') == "Зигзаг 2" %}
             $8 3 42 8;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Полоси" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Полосы" %}
             $8 3 42 9;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Хвилі" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Волны" %}
             $8 3 42 10;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Луска" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Чешуя" %}
             $8 3 42 11;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Портьєра" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Портьера" %}
             $8 3 42 12;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Плетінка" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Плетинка" %}
             $8 3 42 13;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Сніжинка" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Снежинка" %}
             $8 3 42 14;
             {% elif states('input_select.matrix_patterns_effect_variant') == "Квадратики" %}
             $8 3 42 15;
-            {% elif states('input_select.matrix_patterns_effect_variant') == "Греція" %}
+            {% elif states('input_select.matrix_patterns_effect_variant') == "Греция" %}
             $8 3 42 16;
             {% elif states('input_select.matrix_patterns_effect_variant') == "Круги" %}
             $8 3 42 17;
@@ -301,7 +289,6 @@
             {% endif %}
 
   - alias: set_matrix_mode_segments
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_boolean.matrix_mode_segments

@@ -1,19 +1,19 @@
-###################################   МАТРИЦЯ   #################################
+###################################   МАТРИЦА   #################################
 
   matrix_brightness:
-    name: Яскравість гірлянди
+    name: Яркость гирлянды
     min: 1
     max: 255
     step: 1
     
   matrix_current_limit:
-    name: Ліміт по струму
+    name: Лимит по току
     min: 1000
-    max: 3000
+    max: 8000
     step: 100
     
   matrix_effect_duration:
-    name: Тривалість режиму
+    name: Продолжительность режима
     min: 5
     max: 120
     step: 1
@@ -25,15 +25,15 @@
     step: 1
     
   matrix_weather_update_period:
-    name: Інтерв. оновлення
+    name: Интерв. обновления
     min: 5
     max: 90
     step: 5
 
-###################################   ЕФЕКТИ   #################################
+###################################   ЭФФЕКТЫ   #################################
 
   matrix_mode_number:
-    name: Номер ефекту
+    name: Номер еффекта
     min: -1
     max: 50
 
@@ -45,14 +45,14 @@
     step: 1
 
   matrix_mode_speed:
-    name: Швидкість
+    name: Скорость
     icon: "mdi:speedometer"
     min: 0
     max: 255
     step: 1
 
   matrix_mode_variant:
-    name: Варіант
+    name: Вариант
     icon: "mdi:format-list-checkbox"
     min: 0
     max: 255
@@ -60,61 +60,61 @@
 
 
   matrix_mode_color:
-    name: Колір
+    name: Цвет
     icon: "mdi:palette"
     min: 0
     max: 255
     step: 1
 
   matrix_mode_saturation:
-    name: Насиченість
+    name: Насыщенность
     icon: "mdi:image-filter-vintage"
     min: 0
     max: 255
     step: 1
 
-###################################   БІЖУЧА СТРОКА   #################################
+###################################   БЕГУЩАЯ СТРОКА   #################################
 
   matrix_running_text_interval:
-    name: Інтервал, 10-600
+    name: Интервал, 10-600
     min: 10
     max: 600
     step: 5
 
   matrix_running_text_speed:
-    name: Швидкість, 0-255
+    name: Скорость, 0-255
     min: 1
     max: 255
     step: 1
 
   matrix_running_text_color_red:
-    name: Червоний
+    name: Красный
     min: 1
     max: 255
     step: 1
 
   matrix_running_text_color_green:
-    name: Зелений
+    name: Зеленый
     min: 1
     max: 255
     step: 1
 
   matrix_running_text_color_blue:
-    name: Синій
+    name: Синий
     min: 1
     max: 255
     step: 1
 
-###################################   НАЛАШТУВАННЯ ГОДИННИКА   #################################
+###################################   НАСТРОЙКИ ЧАСОВ   #################################
 
   matrix_clock_ntp_sync_period:
-    name: "Інтервал"
+    name: "Интервал"
     min: 10
     max: 180
     step: 5
 
   matrix_clock_timezone:
-    name: "Часовий пояс"
+    name: "Часовой пояс"
     min: 0
     max: 23
     step: 1
@@ -126,63 +126,63 @@
     step: 1
 
   matrix_clock_date_interval:
-    name: "Через кожні"
+    name: "Через каждые"
     min: 5
     max: 300
     step: 5
 
   matrix_clock_speed:
-    name: "Швидкість"
+    name: "Скорость"
     min: 1
     max: 255
     step: 1
 
-###################################   РЕЖИМИ ПО ЧАСУ   #################################
+###################################   РЕЖИМЫ ПО ВРЕМЕНИ   #################################
 
   matrix_time_mode_1_hours:
-    name: "Година"
+    name: "Час"
     min: 0
     max: 23
     step: 1
 
   matrix_time_mode_1_minutes:
-    name: "Хвилина"
+    name: "Минута"
     min: 0
     max: 59
     step: 1
 
   matrix_time_mode_2_hours:
-    name: "Година"
+    name: "Час"
     min: 0
     max: 23
     step: 1
 
   matrix_time_mode_2_minutes:
-    name: "Хвилина"
+    name: "Минута"
     min: 0
     max: 59
     step: 1
 
   matrix_time_mode_3_hours:
-    name: "Година"
+    name: "Час"
     min: 0
     max: 23
     step: 1
 
   matrix_time_mode_3_minutes:
-    name: "Хвилина"
+    name: "Минута"
     min: 0
     max: 59
     step: 1
 
   matrix_time_mode_4_hours:
-    name: "Година"
+    name: "Час"
     min: 0
     max: 23
     step: 1
 
   matrix_time_mode_4_minutes:
-    name: "Хвилина"
+    name: "Минута"
     min: 0
     max: 59
     step: 1

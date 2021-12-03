@@ -1,7 +1,6 @@
-###################################   ОСНОВНІ ПАРАМЕТРИ   #################################
+###################################   ОСНОВНЫЕ ПАРАМЕТРЫ   #################################
 
   - alias: get_matrix_PS
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/PS
@@ -22,7 +21,6 @@
           entity_id: automation.set_matrix_PS
 
   - alias: get_matrix_BR
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/BR
@@ -39,7 +37,6 @@
           entity_id: automation.set_matrix_BR
 
   - alias: get_matrix_DM
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/DM
@@ -60,7 +57,6 @@
           entity_id: automation.set_matrix_DM
 
   - alias: get_matrix_RM
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/RM
@@ -81,7 +77,6 @@
           entity_id: automation.set_matrix_RM
 
   - alias: get_matrix_PD
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/PD
@@ -98,7 +93,6 @@
           entity_id: automation.set_matrix_PD_IT
 
   - alias: get_matrix_IT
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/IT
@@ -115,7 +109,6 @@
           entity_id: automation.set_matrix_PD_IT
 
   - alias: get_matrix_PW
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/PW
@@ -132,7 +125,6 @@
           entity_id: automation.set_matrix_PW
 
   - alias: get_matrix_WU
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/WU
@@ -156,7 +148,6 @@
           entity_id: automation.set_matrix_WU
 
   - alias: get_matrix_WR
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/WR
@@ -173,7 +164,6 @@
           entity_id: automation.set_matrix_WR_WS_WT
 
   - alias: get_matrix_WS
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/WS
@@ -190,7 +180,6 @@
           entity_id: automation.set_matrix_WR_WS_WT
 
   - alias: get_matrix_WT
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/WT

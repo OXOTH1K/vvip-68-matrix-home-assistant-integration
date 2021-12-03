@@ -1,5 +1,4 @@
   - alias: get_matrix_AM1T
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM1T
@@ -20,7 +19,6 @@
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM1A
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM1A
@@ -33,22 +31,21 @@
           entity_id: input_select.matrix_time_mode_1_action
           option: >
             {% if trigger.payload | int == 1 %}
-            Годинник
+            Часы
             {% elif trigger.payload | int == 0 %}
             Демо-режим
             {% elif trigger.payload | int == -1 %}
-            Нічний годинник
+            Ночные часы
             {% elif trigger.payload | int == -2 %}
-            Вимкнути матрицю
+            Выключить матрицу
             {% else %}
-            Нічого
+            Ничего
             {% endif %}
       - service: automation.turn_on
         data:
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM2T
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM2T
@@ -69,7 +66,6 @@
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM2A
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM2A
@@ -82,22 +78,21 @@
           entity_id: input_select.matrix_time_mode_2_action
           option: >
             {% if trigger.payload | int == 1 %}
-            Годинник
+            Часы
             {% elif trigger.payload | int == 0 %}
             Демо-режим
             {% elif trigger.payload | int == -1 %}
-            Нічний годинник
+            Ночные часы
             {% elif trigger.payload | int == -2 %}
-            Вимкнути матрицю
+            Выключить матрицу
             {% else %}
-            Нічого
+            Ничего
             {% endif %}
       - service: automation.turn_on
         data:
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM3T
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM3T
@@ -118,7 +113,6 @@
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM3A
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM3A
@@ -131,22 +125,21 @@
           entity_id: input_select.matrix_time_mode_3_action
           option: >
             {% if trigger.payload | int == 1 %}
-            Годинник
+            Часы
             {% elif trigger.payload | int == 0 %}
             Демо-режим
             {% elif trigger.payload | int == -1 %}
-            Нічний годинник
+            Ночные часы
             {% elif trigger.payload | int == -2 %}
-            Вимкнути матрицю
+            Выключить матрицу
             {% else %}
-            Нічого
+            Ничего
             {% endif %}
       - service: automation.turn_on
         data:
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM4T
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM4T
@@ -167,7 +160,6 @@
           entity_id: automation.matrix_set_time_modes
 
   - alias: get_matrix_AM4A
-    initial_state: true
     trigger:
       - platform: mqtt
         topic: WiFiPanel-0/stt/AM4A
@@ -180,15 +172,15 @@
           entity_id: input_select.matrix_time_mode_4_action
           option: >
             {% if trigger.payload | int == 1 %}
-            Годинник
+            Часы
             {% elif trigger.payload | int == 0 %}
             Демо-режим
             {% elif trigger.payload | int == -1 %}
-            Нічний годинник
+            Ночные часы
             {% elif trigger.payload | int == -2 %}
-            Вимкнути матрицю
+            Выключить матрицу
             {% else %}
-            Нічого
+            Ничего
             {% endif %}
       - service: automation.turn_on
         data:

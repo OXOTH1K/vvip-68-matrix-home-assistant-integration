@@ -1,6 +1,5 @@
 # Настройка режимів по часу
   - alias: matrix_set_time_modes
-    initial_state: true
     trigger:
       - platform: state
         entity_id: input_number.matrix_time_mode_1_hours
@@ -34,52 +33,52 @@
             $22
             {{ "%02d" % states('input_number.matrix_time_mode_1_hours') | int }}
             {{ "%02d" % states('input_number.matrix_time_mode_1_minutes') | int }}
-            {%- if states('input_select.matrix_time_mode_1_action') == "Вимкнути матрицю" %}
+            {%- if states('input_select.matrix_time_mode_1_action') == "Выключить матрицу" %}
             -2
-            {%- elif states('input_select.matrix_time_mode_1_action') == "Нічний годинник" %}
+            {%- elif states('input_select.matrix_time_mode_1_action') == "Ночные часы" %}
             -1
             {%- elif states('input_select.matrix_time_mode_1_action') == "Демо-режим" %}
             0
-            {%- elif states('input_select.matrix_time_mode_1_action') == "Годинник" %}
+            {%- elif states('input_select.matrix_time_mode_1_action') == "Часы" %}
             1
             {%- else %}
             -3
             {%- endif %}
             {{ "%02d" % states('input_number.matrix_time_mode_2_hours') | int }}
             {{ "%02d" % states('input_number.matrix_time_mode_2_minutes') | int }}
-            {%- if states('input_select.matrix_time_mode_2_action') == "Вимкнути матрицю" %}
+            {%- if states('input_select.matrix_time_mode_2_action') == "Выключить матрицу" %}
             -2
-            {%- elif states('input_select.matrix_time_mode_2_action') == "Нічний годинник" %}
+            {%- elif states('input_select.matrix_time_mode_2_action') == "Ночные часы" %}
             -1
             {%- elif states('input_select.matrix_time_mode_2_action') == "Демо-режим" %}
             0
-            {%- elif states('input_select.matrix_time_mode_2_action') == "Годинник" %}
+            {%- elif states('input_select.matrix_time_mode_2_action') == "Часы" %}
             1
             {%- else %}
             -3
             {%- endif %}
             {{ "%02d" % states('input_number.matrix_time_mode_3_hours') | int }}
             {{ "%02d" % states('input_number.matrix_time_mode_3_minutes') | int }}
-            {%- if states('input_select.matrix_time_mode_3_action') == "Вимкнути матрицю" %}
+            {%- if states('input_select.matrix_time_mode_3_action') == "Выключить матрицу" %}
             -2
-            {%- elif states('input_select.matrix_time_mode_3_action') == "Нічний годинник" %}
+            {%- elif states('input_select.matrix_time_mode_3_action') == "Ночные часы" %}
             -1
             {%- elif states('input_select.matrix_time_mode_3_action') == "Демо-режим" %}
             0
-            {%- elif states('input_select.matrix_time_mode_3_action') == "Годинник" %}
+            {%- elif states('input_select.matrix_time_mode_3_action') == "Часы" %}
             1
             {%- else %}
             -3
             {%- endif %}
             {{ "%02d" % states('input_number.matrix_time_mode_4_hours') | int }}
             {{ "%02d" % states('input_number.matrix_time_mode_4_minutes') | int }}
-            {%- if states('input_select.matrix_time_mode_4_action') == "Вимкнути матрицю" %}
+            {%- if states('input_select.matrix_time_mode_4_action') == "Выключить матрицу" %}
             -2;
-            {%- elif states('input_select.matrix_time_mode_4_action') == "Нічний годинник" %}
+            {%- elif states('input_select.matrix_time_mode_4_action') == "Ночные часы" %}
             -1;
             {%- elif states('input_select.matrix_time_mode_4_action') == "Демо-режим" %}
             0;
-            {%- elif states('input_select.matrix_time_mode_4_action') == "Годинник" %}
+            {%- elif states('input_select.matrix_time_mode_4_action') == "Часы" %}
             1;
             {%- else %}
             -3;
